@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.blinking-cursor {
+    font-weight: 100;
+    font-size: 40px;
+    color: white;   
+    animation: blink 1s infinite;
+  }
+  
+.solid-cursor{
+  font-weight: 100;
+  font-size: 40px;
+  color: white;  
+  opacity: 1;
+}
+
+  @keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }

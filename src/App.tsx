@@ -6,7 +6,44 @@ function App() {
   const [mousePos, setMousePos] = useState({ x: -175, y: -175 });
   const [showNavbar, setShowNavbar] = useState(false);
   const aboutSectionRef = useRef<HTMLDivElement | null>(null);
+  const [currentText, setCurrentText] = useState('');  
+  const [textIndex, setTextIndex] = useState(0);       
+  const [isDeleting, setIsDeleting] = useState(false); 
+  const [isPaused, setIsPaused] = useState(false);
+  const typingSpeed = 70;                             
+  const deletingSpeed = 95;                           
+  const delayAfterTyping = 2000;                       
 
+  // Array of texts to display in typing effect
+  const texts = ["Computer Science Student.", "Java Developer.", "React Developer."];
+
+  //typing effect logic
+  useEffect(() => {
+    const handleTyping = () => {
+      const current = texts[textIndex];
+      setIsPaused(false);
+
+      if(!isDeleting) {
+        setCurrentText((prev) => current.substring(0, prev.length + 1));
+
+        if(currentText === current){
+          setIsPaused(true);
+          setTimeout(() => setIsDeleting(true), delayAfterTyping);
+        }
+      }else{
+        //deleting character
+        setCurrentText((prev) => current.substring(0, prev.length - 1));
+
+        if (currentText === '') {
+          setIsDeleting(false);
+          setTextIndex((prev) => (prev + 1) % texts.length); // Move to next text
+        }
+      }
+    };
+
+    const timeoutId = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
+    return () => clearTimeout(timeoutId);  // Cleanup timeout
+  }, [currentText, isDeleting]);
 
   // Add event listener to track the mouse movement
   useEffect(() => {
@@ -78,7 +115,8 @@ function App() {
           Hello, I'm <span className="text-red-500">Josh</span>.
         </h1>
         <h2 className="text-white text-3xl md:text-4xl mt-4">
-          I'm a Computer Science Student.
+          I'm a {currentText}
+          <span className={isPaused ? 'blinking-cursor' : 'solid-cursor'}>|</span>
         </h2>
         <button 
           onClick={handleScrollToSection}
