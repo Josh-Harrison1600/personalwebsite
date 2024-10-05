@@ -144,7 +144,7 @@ function App() {
       ref={aboutSectionRef}//reference to scroll into view
       className='min-h-screen flex items-center justify-center bg-gray-800 text-white'
     >
-      <div className='max-w-4xl mx-auto text-center p-8'>
+      <div id='about' className='max-w-4xl mx-auto text-center p-8'>
         <h2 className='text-4xl mb-4'>About Me</h2>
         <p className='text-xl'> example text example text example text example text example text example text example text example text 
         example text example text example text example text example text example text example text example text example text example text 
