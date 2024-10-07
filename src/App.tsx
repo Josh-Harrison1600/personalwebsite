@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import bgIMG from "./components/images/bg1.png";
+import testimg from "./components/images/testimg.jpg";
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 function App() {
@@ -147,7 +148,7 @@ function App() {
             <p className="text-xl">Description of Project One goes here. It involves technology X, Y, and Z.</p>
           </div>
           <div className="md:w-1/2">
-            <img src="/path/to/project1.png" alt="Project One" className="w-full" />
+            <img src={testimg} alt="Project One" className="w-full" />
           </div>
         </div>
 
@@ -175,9 +176,64 @@ function App() {
       </div>
 
       {/* Contact Section */}
-      <div id="contact" className='min-h-screen bg-black text-white p-8 pt-16'>
+      <div id="contact" className='min-h-screen bg-gray-950 text-white p-8 pt-16'>
+        <div className="text-4xl text-center mb-8">
         <h2 className="text-4xl text-center mb-8">Contact Me</h2>
-        <p className="text-xl text-center">Contact description goes here</p>
+          </div>
+        <p className="text-xl text-center mb-8">Feel free to reach out by filling out the form below!</p>
+
+        <div className='max-w-lg mx-auto'>
+          <form className='space-y-6'>
+            <div>
+              <label htmlFor='name' className='block text-sm font-medium text-gray-300'>
+                Your Name
+              </label>
+              <input 
+                type='text'
+                id='name'
+                name='name'
+                required
+                className='mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 bg-gray-800 text-white'
+              />    
+            </div>
+
+            <div>
+              <label htmlFor='email' className='block text-sm font-medium text-gray-300'>
+                Your Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                className="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 bg-gray-800 text-white"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-300">
+                Your Message
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                rows={4}
+                required
+                className="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 bg-gray-800 text-white"
+              ></textarea>
+            </div>
+
+            {/* Submit Button */}
+            <div>
+              <button
+                type="submit"
+                className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+              >
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     </>
   );
