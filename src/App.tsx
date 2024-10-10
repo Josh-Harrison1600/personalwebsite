@@ -2,19 +2,27 @@ import React, { useEffect, useState, useRef } from 'react';
 import bgIMG from "./components/images/bg1.png";
 import testimg from "./components/images/testimg.jpg";
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { useTypingEffect } from './hooks/useTypingEffect';
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: -175, y: -175 });
-  const [showNavbar, setShowNavbar] = useState(false); // Navbar starts hidden
+  const [showNavbar, setShowNavbar] = useState(false);
   const aboutSectionRef = useRef<HTMLDivElement | null>(null);
   const projectsSectionRef = useRef<HTMLDivElement | null>(null);
-  const [currentText, setCurrentText] = useState('');  
-  const [textIndex, setTextIndex] = useState(0);       
-  const [isDeleting, setIsDeleting] = useState(false); 
+  const contactSectionRef = useRef<HTMLDivElement | null>(null);
+  const [currentText, setCurrentText] = useState('');
+  const [textIndex, setTextIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
-  const typingSpeed = 70;                             
-  const deletingSpeed = 95;                           
-  const delayAfterTyping = 2000; 
+  const [contactText, setContactText] = useState(''); // Contact typing state
+  const [hasTypedContact, setHasTypedContact] = useState(false); // Prevent re-typing
+  const [hasTypedAbout, setHasTypedAbout] = useState(false);
+  const [hasTypedProjects, setHasTypedProjects] = useState(false);
+  const [aboutText, setAboutText] = useState('');
+  const [projectsText, setProjectsText] = useState('');
+  const typingSpeed = 70;
+  const deletingSpeed = 95;
+  const delayAfterTyping = 2000;
 
   // Array of texts to display in typing effect
   const texts = ["Computer Science Student.", "Java Developer.", "React Developer."];
@@ -26,24 +34,24 @@ function App() {
       setIsPaused(false);
 
       if (!isDeleting) {
-        setCurrentText((prev) => current.substring(0, prev.length + 1));
+        setCurrentText(current.substring(0, currentText.length + 1));
 
         if (currentText === current) {
           setIsPaused(true);
           setTimeout(() => setIsDeleting(true), delayAfterTyping);
         }
       } else {
-        setCurrentText((prev) => current.substring(0, prev.length - 1));
+        setCurrentText(current.substring(0, currentText.length - 1));
 
         if (currentText === '') {
           setIsDeleting(false);
-          setTextIndex((prev) => (prev + 1) % texts.length); // Move to next text
+          setTextIndex((prev) => (prev + 1) % texts.length);
         }
       }
     };
 
     const timeoutId = setTimeout(handleTyping, isDeleting ? deletingSpeed : typingSpeed);
-    return () => clearTimeout(timeoutId);  
+    return () => clearTimeout(timeoutId);
   }, [currentText, isDeleting]);
 
   // Mouse movement effect
@@ -62,14 +70,49 @@ function App() {
     };
   }, []);
 
+  // Use the typing effect hook for different sections
+  useTypingEffect("Contact Me", setContactText, typingSpeed, hasTypedContact);
+  useTypingEffect("About Me", setAboutText, typingSpeed, hasTypedAbout);
+  useTypingEffect("Projects", setProjectsText, typingSpeed, hasTypedProjects);
+
   // Handle the "View my work" button click and show the navbar
   const handleScrollToSection = (sectionRef: React.RefObject<HTMLDivElement>, offset: number = 0) => {
     if (sectionRef.current) {
       const sectionPosition = sectionRef.current.offsetTop - offset;
       window.scrollTo({ top: sectionPosition, behavior: 'smooth' });
-      setShowNavbar(true); // Show the navbar when "View my work" is clicked
+      setShowNavbar(true);
     }
   };
+
+  // Typing effect for different sections
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            if (entry.target === contactSectionRef.current && !hasTypedContact) {
+              setHasTypedContact(true); // Start "Contact Me" typing effect
+            } else if (entry.target === aboutSectionRef.current && !hasTypedAbout) {
+              setHasTypedAbout(true); // Start "About Me" typing effect
+            } else if (entry.target === projectsSectionRef.current && !hasTypedProjects) {
+              setHasTypedProjects(true); // Start "Projects" typing effect
+            }
+          }
+        });
+      },
+      { threshold: 0.5 } // Trigger when 50% of the section is visible
+    );
+
+    if (contactSectionRef.current) observer.observe(contactSectionRef.current);
+    if (aboutSectionRef.current) observer.observe(aboutSectionRef.current);
+    if (projectsSectionRef.current) observer.observe(projectsSectionRef.current);
+
+    return () => {
+      if (contactSectionRef.current) observer.unobserve(contactSectionRef.current);
+      if (aboutSectionRef.current) observer.unobserve(aboutSectionRef.current);
+      if (projectsSectionRef.current) observer.unobserve(projectsSectionRef.current);
+    };
+  }, [hasTypedContact, hasTypedAbout, hasTypedProjects]);
 
   // Background style for the main section
   const backgroundStyle = {
@@ -82,7 +125,6 @@ function App() {
 
   return (
     <>
-      {/* Navbar only shows after clicking "View my work" */}
       {showNavbar && (
         <nav className='fixed top-0 left-0 w-full bg-black text-white py-4'>
           <div className='container mx-auto px-4 flex justify-between items-center'>
@@ -109,7 +151,6 @@ function App() {
         </nav>
       )}
 
-      {/* Main Section */}
       <div className="h-screen bg-cover bg-center flex items-center justify-center pt-16" style={backgroundStyle}>
         <div className="text-center">
           <h1 className="text-white text-5xl md:text-6xl font-semibold">
@@ -120,28 +161,25 @@ function App() {
             <span className={isPaused ? 'blinking-cursor' : 'solid-cursor'}>|</span>
           </h2>
           <button
-            onClick={() => handleScrollToSection(aboutSectionRef, 64)} 
+            onClick={() => handleScrollToSection(aboutSectionRef, 64)}
             className="mt-8 px-6 py-3 border-2 border-red-500 text-red-500 text-xl hover:bg-red-500 hover:text-white transition duration-300">
             View my work ↓
           </button>
         </div>
       </div>
 
-      {/* About me section */}
       <div ref={aboutSectionRef} className='min-h-screen flex items-center justify-center bg-gray-800 text-white pt-16'>
         <div className='max-w-4xl mx-auto text-center p-8'>
-          <h2 className='text-4xl mb-4'>About Me</h2>
+          <h2 className='text-4xl mb-4'>{aboutText}</h2>
           <p className='text-xl'>
             Description goes here. Description goes here. Description goes here.
           </p>
         </div>
       </div>
 
-      {/* Projects Section */}
       <div ref={projectsSectionRef} className='min-h-screen bg-gray-900 text-white p-8 pt-16'>
-        <h2 className="text-4xl text-center mb-8">Projects</h2>
+        <h2 className="text-4xl text-center mb-8">{projectsText}</h2>
 
-        {/* Project 1 */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-16">
           <div className="md:w-1/2 text-left mb-4 md:mb-0">
             <h3 className="text-2xl font-bold">Project One</h3>
@@ -151,35 +189,11 @@ function App() {
             <img src={testimg} alt="Project One" className="w-full" />
           </div>
         </div>
-
-        {/* Project 2 */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-16">
-          <div className="md:w-1/2 text-left mb-4 md:mb-0">
-            <h3 className="text-2xl font-bold">Project Two</h3>
-            <p className="text-xl">Description of Project Two goes here. It involves technology A, B, and C.</p>
-          </div>
-          <div className="md:w-1/2">
-            <img src="/path/to/project2.png" alt="Project Two" className="w-full" />
-          </div>
-        </div>
-
-        {/* Project 3 */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-16">
-          <div className="md:w-1/2 text-left mb-4 md:mb-0">
-            <h3 className="text-2xl font-bold">Project Three</h3>
-            <p className="text-xl">Description of Project Three goes here. It involves technology D, E, and F.</p>
-          </div>
-          <div className="md:w-1/2">
-            <img src="/path/to/project3.png" alt="Project Three" className="w-full" />
-          </div>
-        </div>
       </div>
 
       {/* Contact Section */}
-      <div id="contact" className='min-h-screen bg-gray-950 text-white p-8 pt-16'>
-        <div className="text-4xl text-center mb-8">
-        <h2 className="text-4xl text-center mb-8">Contact Me</h2>
-          </div>
+      <div id="contact" ref={contactSectionRef} className='min-h-screen bg-gray-950 text-white p-8 pt-16'>
+        <h2 className="text-4xl text-center mb-8">{contactText}</h2>
         <p className="text-xl text-center mb-8">Feel free to reach out by filling out the form below!</p>
 
         <div className='max-w-lg mx-auto'>
@@ -188,13 +202,13 @@ function App() {
               <label htmlFor='name' className='block text-sm font-medium text-gray-300'>
                 Your Name
               </label>
-              <input 
+              <input
                 type='text'
                 id='name'
                 name='name'
                 required
                 className='mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 bg-gray-800 text-white'
-              />    
+              />
             </div>
 
             <div>
@@ -223,7 +237,6 @@ function App() {
               ></textarea>
             </div>
 
-            {/* Submit Button */}
             <div>
               <button
                 type="submit"
