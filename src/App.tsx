@@ -161,13 +161,13 @@ return (
     </div>
 
     {/* About Section */}
-    <About aboutText={aboutText} ref={aboutSectionRef} /> {/* Ensure ref is passed */}
+    <About aboutText={aboutText} ref={aboutSectionRef} /> 
 
     {/* Projects Section */}
-    <Projects projectsText={projectsText} ref={projectsSectionRef} /> {/* Ensure ref is passed */}
+    <Projects projectsText={projectsText} ref={projectsSectionRef} />
 
     {/* Contact Section */}
-    <Contact ref={contactSectionRef} /> {/* Ensure ref is passed */}
+    <Contact ref={contactSectionRef} />
   </>
 );
 
