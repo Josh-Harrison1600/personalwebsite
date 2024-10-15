@@ -51,7 +51,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
                 id="name"
                 name="user_name"
                 required
-                placeholder="Enter Your Name"
+                                placeholder="Enter Your Name"
                 className="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 bg-gray-800 text-white"
               />
             </div>
@@ -88,7 +88,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
               <button
                 type="submit"
                 disabled={isSending}
-                className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 ${
+                className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:ring-22 focus:ring-offset-2 focus:ring-red-500 ${
                   isSending && 'opacity-50 cursor-not-allowed'
                 }`}
               >
