@@ -6,7 +6,7 @@ interface AboutProps {
 
 const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
   return (
-    <div ref={ref} className='min-h-screen flex items-center justify-center bg-gray-800 text-white pt-16'>
+    <div ref={ref} className='min-h-screen flex items-center justify-center bg-gray-950 text-white pt-16'>
       <div data-aos="fade-up" className='max-w-4xl mx-auto grid grid-cols-2 grid-rows-[auto_auto] gap-8 p-8'>
         {/* Title */}
         <h2 className='text-4xl mb-4 text-center col-span-2'>{aboutText}</h2>

@@ -160,14 +160,15 @@ return (
       </div>
     </div>
 
-    {/* About Section */}
-    <About aboutText={aboutText} ref={aboutSectionRef} /> 
+      {/* About Section */}
+      <About aboutText={aboutText} ref={aboutSectionRef} /> 
 
-    {/* Projects Section */}
-    <Projects projectsText={projectsText} ref={projectsSectionRef} />
+      {/* Projects Section */}
+      <Projects projectsText={projectsText} ref={projectsSectionRef} />
 
-    {/* Contact Section */}
-    <Contact ref={contactSectionRef} />
+      {/* Contact Section */}
+      <Contact ref={contactSectionRef} />
+
   </>
 );
 

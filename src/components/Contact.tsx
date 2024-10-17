@@ -1,11 +1,14 @@
-import React, { useRef, useState, forwardRef } from 'react';
+import React, { useState, useRef, forwardRef } from 'react'; // Make sure to import forwardRef
 import emailjs from 'emailjs-com';
 
-// Using forwardRef to pass the ref from parent (App.tsx)
-const Contact = forwardRef<HTMLDivElement>((props, ref) => {
+interface ContactProps {}
+
+const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [isSending, setIsSending] = useState(false);
   const [message, setMessage] = useState('');
+  const [showModal, setShowModal] = useState(false);
+  const [isFadingOut, setIsFadingOut] = useState(false); 
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -14,24 +17,35 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
     if (formRef.current) {
       emailjs
         .sendForm(
-          process.env.REACT_APP_EMAILJS_SERVICE_ID || '',    
-          process.env.REACT_APP_EMAILJS_TEMPLATE_ID || '',  
+          process.env.REACT_APP_EMAILJS_SERVICE_ID || '',
+          process.env.REACT_APP_EMAILJS_TEMPLATE_ID || '',
           formRef.current,
           process.env.REACT_APP_EMAILJS_USER_ID || ''
         )
         .then(
-          (result) => {
-            console.log(result.text);
+          () => {
             setMessage('Message sent successfully!');
+            setShowModal(true); 
             setIsSending(false);
+            formRef.current?.reset();
           },
           (error) => {
             console.log(error.text);
             setMessage('Failed to send message. Please try again.');
+            setShowModal(true);
             setIsSending(false);
           }
         );
     }
+  };
+
+  // Trigger the fade-out animation, then hide the modal after the animation is done
+  const closeModal = () => {
+    setIsFadingOut(true);
+    setTimeout(() => {
+      setShowModal(false);
+      setIsFadingOut(false);
+    }, 500); 
   };
 
   return (
@@ -51,7 +65,7 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
                 id="name"
                 name="user_name"
                 required
-                                placeholder="Enter Your Name"
+                placeholder="Enter Your Name"
                 className="mt-1 block w-full px-3 py-2 border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-red-500 focus:border-red-500 bg-gray-800 text-white"
               />
             </div>
@@ -96,9 +110,28 @@ const Contact = forwardRef<HTMLDivElement>((props, ref) => {
               </button>
             </div>
           </form>
-          {message && <p className="text-center mt-4 text-green-500">{message}</p>}
         </div>
       </div>
+
+      {/* Modal Popup */}
+      {showModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div
+            className={`bg-white p-6 rounded-lg shadow-lg relative w-96 ${
+              isFadingOut ? 'animate-fadeOut' : 'animate-fadeIn'
+            }`}
+          >
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
+              onClick={closeModal}
+            >
+              ✕
+            </button>
+            <h3 className="text-lg font-semibold mb-4 text-center">{message}</h3>
+            <p className="text-md text-gray-700 text-center">I'll get back to you shortly!</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 });

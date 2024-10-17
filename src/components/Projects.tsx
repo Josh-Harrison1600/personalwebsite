@@ -6,7 +6,7 @@ interface ProjectsProps {
 
 const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, ref) => {
   return (
-    <div ref={ref} className='min-h-screen bg-gray-900 text-white p-8 pt-16'>
+    <div ref={ref} className='min-h-screen bg-gray-950 text-white p-8 pt-16'>
       <div data-aos="fade-up">
         <h2 className="text-4xl text-center mb-8">{projectsText}</h2>
 
@@ -29,7 +29,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
         </div>
 
         {/* Song Battle */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-16">
+        <div className="flex flex-col md:flex-row-reverse items-center justify-between mb-16"> {/* Use flex-row-reverse here */}
           <div className="md:w-[43%] mb-4 md:mb-0 text-center">
             <a href="https://github.com/YourUsername/New-Project" target="_blank">
               <h3 className="inline-block text-2xl font-bold hover:text-green-600 transition-all duration-300 transform hover:scale-110 text-center mb-4">Song Battle</h3>
@@ -39,8 +39,12 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
             </p>
           </div>
           <div data-aos="flip-down" className="md:w-[55%] hover:scale-105 duration-300">
-            <a href="https://github.com/YourUsername/New-Project" target="_blank" className='block'>
-              <img src="path/to/your/project-image.png" alt="New Project Image" className="w-full border-2 border-transparent hover:border-green-600 hover:scale-105 transition-all duration-300" />
+            <a href="https://github.com/YourUsername/New-Project" target="_blank" className="block">
+              <img
+                src={require('./images/comingsoon.jpg')}
+                alt="Project Two"
+                className="w-full border-2 border-transparent hover:border-green-600 hover:scale-105 transition-all duration-300"
+              />
             </a>
           </div>
         </div>
@@ -71,8 +75,8 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
             </ul>
           </div>
           <div data-aos="flip-down" className="md:w-[55%] hover:scale-105 duration-300">
-            <a href="https://github.com/YourUsername/New-Project" target="_blank" className='block'>
-              <img src="path/to/your/project-image.png" alt="New Project Image" className="w-full border-2 border-transparent hover:border-red-500 hover:scale-105 transition-all duration-300" />
+            <a href="https://github.com/Josh-Harrison1600/personalwebsite" target="_blank" className='block'>
+              <img src={require('./images/ProjectThree.png')} alt="New Project Image" className="w-full border-2 border-transparent hover:border-blue-600 hover:scale-105 transition-all duration-300" />
             </a>
           </div>
         </div>
