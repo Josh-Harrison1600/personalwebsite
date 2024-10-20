@@ -12,8 +12,13 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
         <h2 className='text-4xl mb-4 text-center col-span-2'>{aboutText}</h2>
 
         {/* Description on the left */}
-        <p className='text-xl'>
-          Description goes here. Description goes here. Description goes here.
+        <p className='text-xl text-center'>
+          I'm a previous graduate of NBCC from both Network Administration and Cybersecurity.
+          <br></br>
+          I currently work in both Cybersecurity & IT Support whilst pursuing my Bachelors of Computer Science in my spare time.
+          <br></br>
+          I'm knowledgeable in React, TypeScript, Java, CSS, HTML, MySQL, Tailwind
+
         </p>
 
         {/* Button on the right */}
@@ -21,7 +26,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
           <a
             href="/resume.pdf"
             download="Resume_TEST.pdf"
-            className='px-6 py-3 bg-red-500 text-white font-semibold rounded hover:bg-red-600 transition duration-300'
+            className='px-6 h-12 bg-red-500 text-white text-lg font-semibold rounded-lg hover:bg-red-600 transition duration-300 ease-in-out flex items-center justify-center'
           >
             Download My Resume
           </a>
