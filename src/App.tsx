@@ -145,9 +145,10 @@ return (
 
     <div className="h-screen bg-cover bg-center flex items-center justify-center pt-16" style={backgroundStyle}>
       <div className="text-center">
-        <h1 className="text-white text-5xl md:text-6xl font-semibold">
-          Hello, I'm <span className="text-red-500">Josh</span>.
-        </h1>
+      <h1 className="text-white text-5xl md:text-6xl font-semibold">
+        <span data-aos="fade-left">Hello, I'm</span>
+        <span data-aos="fade-right" className="text-red-500"> Josh.</span>
+      </h1>
         <h2 className="text-white text-3xl md:text-4xl mt-4">
           I'm a {currentText}
           <span className={isPaused ? 'blinking-cursor' : 'solid-cursor'}>|</span>
