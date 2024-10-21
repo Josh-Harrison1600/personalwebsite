@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ handleScrollToSection, aboutSectionRef,
           }
         });
       },
-      { threshold: 0.5 } // Trigger when 50% of the section is visible
+      { threshold: 0.3 } // Trigger when 50% of the section is visible
     );
 
     // Observe each section

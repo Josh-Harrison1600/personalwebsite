@@ -1,4 +1,4 @@
-import React, { useState, useRef, forwardRef } from 'react'; // Make sure to import forwardRef
+import React, { useState, useRef, forwardRef } from 'react';
 import emailjs from 'emailjs-com';
 
 interface ContactProps {}
