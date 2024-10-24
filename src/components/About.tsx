@@ -23,10 +23,12 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
         <div data-aos="fade-right" className='flex flex-col justify-center'>
           <p className='text-xl leading-relaxed tracking-wide'>
             I'm a previous graduate of NBCC from both Network Administration and Cybersecurity.
-            <br />
+            <br className='mb-2'/>
             I currently work in both Cybersecurity & IT Support whilst pursuing my Bachelors of Computer Science in my spare time.
-            <br />
+            <br className='mb-2'/>
             I'm knowledgeable in React, TypeScript, Java, CSS, HTML, MySQL, Tailwind.
+            <br className='mb-2'/>
+            These days I find myself making projects in the front end the most :D
           </p>
         </div>
 
