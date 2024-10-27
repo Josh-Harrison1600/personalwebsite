@@ -89,11 +89,16 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
         <a
           href="/resume.pdf"
           download="Resume_TEST.pdf"
-          className='px-6 h-12 bg-red-500 text-white text-lg font-semibold rounded-lg hover:bg-red-600 transition duration-300 ease-in-out flex items-center justify-center'
+          className='relative text-lg font-semibold px-6 py-2 rounded-lg text-white hover:text-white transition duration-300 ease-in-out group'
         >
-          Download My Resume
-        </a>
-      </div>
+        {/* Text layered above the expanding background */}
+        <span className="relative z-10 hover:text-gray-200">Download My Resume</span>
+      
+        {/* Expanding background line */}
+        <span className="absolute bottom-0 left-0 w-full h-[2px] bg-red-500 group-hover:h-full transition-all duration-300 ease-in-out z-0"></span>
+      </a>
+     </div>
+
       <a data-aos="fade-up" className='text-gray-500'>Sensitive details have been removed.<br />Contact me below for my full resume!</a>
     </div>
   );
