@@ -102,11 +102,15 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
               <button
                 type="submit"
                 disabled={isSending}
-                className={`w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-red-600 hover:bg-red-500 focus:outline-none focus:ring-22 focus:ring-offset-2 focus:ring-red-500 ${
-                  isSending && 'opacity-50 cursor-not-allowed'
+                className={`relative w-full flex justify-center py-2 px-4 rounded-md text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 transition duration-300 ease-in-out group ${
+                  isSending ? 'opacity-50 cursor-not-allowed' : ''
                 }`}
               >
-                {isSending ? 'Sending...' : 'Send Message'}
+                {/* Text to stay above the expanding background */}
+                <span className="relative z-10">{isSending ? 'Sending...' : 'Send Message'}</span>
+                
+                {/* Expanding bottom line */}
+                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-red-500 group-hover:h-full transition-all duration-300 ease-in-out z-0"></span>
               </button>
             </div>
           </form>
