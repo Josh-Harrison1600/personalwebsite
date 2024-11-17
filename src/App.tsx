@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import Navbar from './components/Navbar';
 import About from './components/About';
 import Projects from './components/Projects';
+import Footer from './components/Footer';
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: -175, y: -175 });
@@ -132,47 +133,58 @@ function App() {
     backgroundColor: 'black',
   };
 
-return (
-  <>
-    {showNavbar && (
-      <Navbar 
-        handleScrollToSection={handleScrollToSection} 
-        aboutSectionRef={aboutSectionRef} 
-        projectsSectionRef={projectsSectionRef} 
-        contactSectionRef={contactSectionRef} 
-      />
-    )}
 
-    <div className="h-screen bg-cover bg-center flex items-center justify-center pt-16" style={backgroundStyle}>
-      <div className="text-center">
-      <h1 className="text-white text-5xl md:text-6xl font-semibold">
-        <span data-aos="fade-left">Hello, I'm</span>
-        <span data-aos="fade-right" className="text-red-500"> Josh.</span>
-      </h1>
-        <h2 className="text-white text-3xl md:text-4xl mt-4">
-          I'm a {currentText}
-          <span className={isPaused ? 'blinking-cursor' : 'solid-cursor'}>|</span>
-        </h2>
-        <button
-          onClick={() => handleScrollToSection(aboutSectionRef, 64)} // Ensure this scrolls correctly
-          className="mt-8 px-6 py-3 border-2 border-red-500 text-red-500 text-xl hover:bg-red-500 hover:text-white transition duration-300">
-          View my work ↓
-        </button>
-      </div>
+  return (
+    <div className="flex flex-col min-h-screen bg-gray-900">
+      <header>
+        {showNavbar && (
+          <Navbar
+            handleScrollToSection={handleScrollToSection}
+            aboutSectionRef={aboutSectionRef}
+            projectsSectionRef={projectsSectionRef}
+            contactSectionRef={contactSectionRef}
+          />
+        )}
+      </header>
+
+      <main className="flex-grow">
+        <div
+          className="h-screen bg-cover bg-center flex items-center justify-center pt-16"
+          style={backgroundStyle}
+        >
+          <div className="text-center">
+            <h1 className="text-white text-5xl md:text-6xl font-semibold">
+              <span data-aos="fade-left">Hello, I'm</span>
+              <span data-aos="fade-right" className="text-red-500"> Josh.</span>
+            </h1>
+            <h2 className="text-white text-3xl md:text-4xl mt-4">
+              I'm a {currentText}
+              <span className={isPaused ? 'blinking-cursor' : 'solid-cursor'}>|</span>
+            </h2>
+            <button
+              onClick={() => handleScrollToSection(aboutSectionRef, 64)}
+              className="mt-8 px-6 py-3 border-2 border-red-500 text-red-500 text-xl hover:bg-red-500 hover:text-white transition duration-300"
+            >
+              View my work ↓
+            </button>
+          </div>
+        </div>
+
+        {/* About Section */}
+        <About aboutText={aboutText} ref={aboutSectionRef} />
+
+        {/* Projects Section */}
+        <Projects projectsText={projectsText} ref={projectsSectionRef} />
+
+        {/* Contact Section */}
+        <Contact ref={contactSectionRef} />
+      </main>
+
+      {/* Footer */}
+      <Footer />
     </div>
-
-      {/* About Section */}
-      <About aboutText={aboutText} ref={aboutSectionRef} /> 
-
-      {/* Projects Section */}
-      <Projects projectsText={projectsText} ref={projectsSectionRef} />
-
-      {/* Contact Section */}
-      <Contact ref={contactSectionRef} />
-
-  </>
-);
-
+  );
 }
+
 
 export default App;

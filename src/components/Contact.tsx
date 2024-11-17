@@ -8,7 +8,7 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
   const [isSending, setIsSending] = useState(false);
   const [message, setMessage] = useState('');
   const [showModal, setShowModal] = useState(false);
-  const [isFadingOut, setIsFadingOut] = useState(false); 
+  const [isFadingOut, setIsFadingOut] = useState(false);
 
   const sendEmail = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
         .then(
           () => {
             setMessage('Message sent successfully!');
-            setShowModal(true); 
+            setShowModal(true);
             setIsSending(false);
             formRef.current?.reset();
           },
@@ -45,19 +45,24 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
     setTimeout(() => {
       setShowModal(false);
       setIsFadingOut(false);
-    }, 500); 
+    }, 500);
   };
 
   return (
-    <div id="contact" ref={ref} className="min-h-screen bg-gray-950 text-white p-8 pt-16">
+    <div id="contact" ref={ref} className="bg-gray-950 text-white p-8 pt-14 pb-24">
       <div data-aos="fade-up">
         <h2 className="text-4xl text-center mb-8 mt-6">Contact Me</h2>
-        <p className="text-xl text-center mb-8">Feel free to reach out by filling out the form below!</p>
+        <p className="text-xl text-center mb-8">
+          Feel free to reach out by filling out the form below!
+        </p>
 
         <div className="max-w-lg mx-auto">
           <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-300">
+              <label
+                htmlFor="name"
+                className="block text-sm font-medium text-gray-300"
+              >
                 Your Name
               </label>
               <input
@@ -71,7 +76,10 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-300">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium text-gray-300"
+              >
                 Your Email
               </label>
               <input
@@ -85,7 +93,10 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-300">
+              <label
+                htmlFor="message"
+                className="block text-sm font-medium text-gray-300"
+              >
                 Your Message
               </label>
               <textarea
@@ -107,8 +118,10 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
                 }`}
               >
                 {/* Text to stay above the expanding background */}
-                <span className="relative z-10">{isSending ? 'Sending...' : 'Send Message'}</span>
-                
+                <span className="relative z-10">
+                  {isSending ? 'Sending...' : 'Send Message'}
+                </span>
+
                 {/* Expanding bottom line */}
                 <span className="absolute bottom-0 left-0 w-full h-[2px] bg-red-500 group-hover:h-full transition-all duration-300 ease-in-out z-0"></span>
               </button>
@@ -132,7 +145,9 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
               ✕
             </button>
             <h3 className="text-lg font-semibold mb-4 text-center">{message}</h3>
-            <p className="text-md text-gray-700 text-center">I'll get back to you shortly!</p>
+            <p className="text-md text-gray-700 text-center">
+              I'll get back to you shortly!
+            </p>
           </div>
         </div>
       )}
