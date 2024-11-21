@@ -17,9 +17,42 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
               <h3 className="inline-block text-2xl font-bold hover:text-red-500 transition-all duration-300 transform hover:scale-110 text-center mb-4">Shiru</h3>
             </a>
             <p className="text-xl">
-              Shiru is a JSoup based web scraper that extracts Japanese manga from retail stores and uses batch OpenAI API requests to determine the correct reading difficulty,
-              making it useful for people learning Japanese. The frontend site uses React and Tailwind.
+              Shiru an app that allows Japanese learners to browse through a collection of books by the Japanese-Language Proficiency Test rankings which go from N5 to N1.
+              This helps the user narrow down a book that is more suited for their current reading level!
             </p>
+            <p className="text-xl mb-4 mt-4">Shiru was made using:</p>
+            <ul className='list-disc list-inside text-lg ml-4'>
+              <li>
+                <a href="https://react.dev/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  React
+                </a>
+              </li>
+              <li>
+                <a href="https://www.typescriptlang.org/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  TypeScript
+                </a>
+              </li>
+              <li>
+                <a href="https://www.java.com/en/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  Java
+                </a>
+              </li>
+              <li>
+                <a href="https://jsoup.org/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  JSoup
+                </a>
+              </li>
+              <li>
+                <a href="https://platform.openai.com/docs/overview" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  OpenAI API
+                </a>
+              </li>
+              <li>
+                <a href="https://tailwindcss.com/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  Tailwind
+                </a>
+              </li>
+            </ul>
           </div>
           <div data-aos="flip-down" className="md:w-[55%] hover:scale-105 duration-300">
             <a href="https://github.com/Josh-Harrison1600/Shiru-Scraper" target="_blank" className='block'>
@@ -31,17 +64,35 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
         {/* Song Battle */}
         <div className="flex flex-col md:flex-row-reverse items-center justify-between mb-16"> {/* Use flex-row-reverse here */}
           <div className="md:w-[43%] mb-4 md:mb-0 text-center">
-            <a href="https://github.com/YourUsername/New-Project" target="_blank">
+            <a href="https://github.com/Josh-Harrison1600/Song-Battle" target="_blank">
               <h3 className="inline-block text-2xl font-bold hover:text-green-600 transition-all duration-300 transform hover:scale-110 text-center mb-4">Song Battle</h3>
             </a>
             <p className="text-xl">
-              Song Battle is my unfinished app that allows a user to connect their Spotify account and choose one of their playlists, and the site will randomly choose 8 songs for the user to decide which is the best.
+              Song Battle is my app that allows a user to connect to their Spotify account and then choose one of their playlists. Eight random songs from the playlist will be chosen and the user will play to decide which song they like the most.
+              <p className="text-xl mb-4 mt-4">Song battle was made using:</p>
+            <ul className='list-disc list-inside text-lg ml-4'>
+              <li>
+                <a href="https://react.dev/" target="_blank" className='inline-block hover:text-green-600 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  React
+                </a>
+              </li>
+              <li>
+                <a href="https://www.typescriptlang.org/" target="_blank" className='inline-block hover:text-green-600 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  TypeScript
+                </a>
+              </li>
+              <li>
+                <a href="https://tailwindcss.com/" target="_blank" className='inline-block hover:text-green-600 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  Tailwind
+                </a>
+              </li>
+            </ul>
             </p>
           </div>
           <div data-aos="flip-down" className="md:w-[55%] hover:scale-105 duration-300">
-            <a href="https://github.com/YourUsername/New-Project" target="_blank" className="block">
+            <a href="https://github.com/Josh-Harrison1600/Song-Battle" target="_blank" className="block">
               <img
-                src={require('./images/comingsoon.jpg')}
+                src={require('./images/SongBattle.png')}
                 alt="Project Two"
                 className="w-full border-2 border-transparent hover:border-green-600 hover:scale-105 transition-all duration-300"
               />
