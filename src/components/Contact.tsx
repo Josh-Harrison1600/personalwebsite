@@ -145,7 +145,7 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
               ✕
             </button>
             <h3 className="text-lg font-semibold mb-4 text-center">{message}</h3>
-            <p className="text-md text-gray-700 text-center">
+            <p className="text-md text-black text-center">
               I'll get back to you shortly!
             </p>
           </div>

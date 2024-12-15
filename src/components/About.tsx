@@ -26,9 +26,9 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
             <br className='mb-2'/>
             I currently work in both Cybersecurity & IT Support whilst pursuing my Bachelors of Computer Science in my spare time.
             <br className='mb-2'/>
-            I'm knowledgeable in React, TypeScript, Java, CSS, HTML, MySQL, Tailwind.
+            I'm knowledgeable in React, TypeScript, Java, CSS, HTML, MySQL, Tailwind, and C#.
             <br className='mb-2'/>
-            These days I find myself making projects in the front end the most :D
+            These days I find myself working on web apps and Unity projects :D
           </p>
         </div>
 
