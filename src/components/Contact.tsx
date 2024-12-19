@@ -134,7 +134,7 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
       {showModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
           <div
-            className={`bg-white p-6 rounded-lg shadow-lg relative w-96 ${
+            className={`bg-white text-black p-6 rounded-lg shadow-lg relative w-96 ${
               isFadingOut ? 'animate-fadeOut' : 'animate-fadeIn'
             }`}
           >

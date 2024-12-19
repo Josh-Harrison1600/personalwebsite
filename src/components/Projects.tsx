@@ -17,7 +17,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
               <h3 className="inline-block text-2xl font-bold hover:text-red-500 transition-all duration-300 transform hover:scale-110 text-center mb-4">Shiru</h3>
             </a>
             <p className="text-xl">
-              Shiru an app that allows Japanese learners to browse through a collection of books by the Japanese-Language Proficiency Test rankings which go from N5 to N1.
+              Shiru is an app that allows Japanese learners to browse through a collection of books by the Japanese-Language Proficiency Test rankings which go from N5 to N1.
               This helps the user narrow down a book that is more suited for their current reading level!
             </p>
             <p className="text-xl mb-4 mt-4">Shiru was made using:</p>
@@ -25,6 +25,11 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
               <li>
                 <a href="https://react.dev/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
                   React
+                </a>
+              </li>
+              <li>
+                <a href="https://spring.io/projects/spring-boot" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  Spring Boot
                 </a>
               </li>
               <li>

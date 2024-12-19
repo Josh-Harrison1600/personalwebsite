@@ -26,58 +26,58 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
             <br className='mb-2'/>
             I currently work in both Cybersecurity & IT Support whilst pursuing my Bachelors of Computer Science in my spare time.
             <br className='mb-2'/>
-            I'm knowledgeable in React, TypeScript, Java, CSS, HTML, MySQL, Tailwind, and C#.
+            I'm knowledgeable in React, Node.js, Spring Boot, TypeScript, Java, CSS, HTML, MySQL, Tailwind, and C#.
             <br className='mb-2'/>
-            These days I find myself working on web apps and Unity projects :D
+            These days I find myself working on web apps and Unity projects which you can find below :D
           </p>
         </div>
 
         {/* Logos on the right */}
         <div data-aos="fade-left" className='grid grid-cols-2 gap-4'>
         <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">
-          <div data-aos="fade" data-aos-delay="100" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-red-400 transition-all mx-20">
+          <div data-aos="fade" data-aos-delay="100" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20">
             <img src={htmlIMG} alt="HTML" className="h-16 w-16" />
             <span>HTML</span>
           </div>
         </a>
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
-          <div data-aos="fade" data-aos-delay="300" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-red-400 transition-all mx-20">
+          <div data-aos="fade" data-aos-delay="300" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20">
             <img src={cssIMG} alt="CSS" className="h-16 w-16" />
             <span>CSS</span>
           </div>
         </a>
         <a href="https://www.javascript.com/" target="_blank" rel="noopener noreferrer">
-        <div data-aos="fade" data-aos-delay="100" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-red-400 transition-all duration-1200 ease-in-out mx-20">
+        <div data-aos="fade" data-aos-delay="100" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all duration-1200 ease-in-out mx-20">
             <img src={jsIMG} alt="JavaScript" className="h-16 w-16" />
             <span>JavaScript</span>
           </div>
         </a>
         <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
-          <div data-aos="fade" data-aos-delay="300" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-red-400 transition-all mx-20">
+          <div data-aos="fade" data-aos-delay="300" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20">
             <img src={reactIMG} alt="React" className="h-16 w-16" />
             <span>React</span>
           </div>
         </a>
         <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">
-          <div data-aos="fade" data-aos-delay="100" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-red-400 transition-all mx-20">
+          <div data-aos="fade" data-aos-delay="100" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20">
             <img src={gitIMG} alt="Git" className="h-16 w-16" />
             <span>Git</span>
           </div>
         </a>
         <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">
-          <div data-aos="fade" data-aos-delay="300" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-red-400 transition-all mx-20">
+          <div data-aos="fade" data-aos-delay="300" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20">
             <img src={tailwindIMG} alt="Tailwind CSS" className="h-16 w-16" />
             <span>Tailwind</span>
           </div>
         </a>
         <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
-          <div data-aos="fade" data-aos-delay="100" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-red-400 transition-all mx-20">
+          <div data-aos="fade" data-aos-delay="100" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20">
             <img src={typescriptIMG} alt="TypeScript" className="h-16 w-16" />
             <span>TypeScript</span>
           </div>
         </a>
         <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">
-          <div data-aos="fade" data-aos-delay="300" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-red-400 transition-all mx-20 min-h-[100px]">
+          <div data-aos="fade" data-aos-delay="300" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20 min-h-[100px]">
             <img src={mysqlIMG} alt="MySQL" className="h-16 w-16" />
           </div>
         </a>  
