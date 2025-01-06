@@ -3,10 +3,10 @@ import reactIMG from './images/react.png';
 import htmlIMG from './images/html.png';
 import cssIMG from './images/css.png';
 import gitIMG from './images/git.png';
-import jsIMG from './images/js.png';
 import tailwindIMG from './images/tailwind.png';
 import typescriptIMG from './images/typescript.png';
 import mysqlIMG from './images/mysql.png';
+import nodeIMG from './images/nodejs.png';
 
 interface AboutProps {
   aboutText: string;
@@ -26,9 +26,25 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
             <br className='mb-2'/>
             I currently work in both Cybersecurity & IT Support whilst pursuing my Bachelors of Computer Science in my spare time.
             <br className='mb-2'/>
-            I'm knowledgeable in React, Node.js, Spring Boot, TypeScript, Java, CSS, HTML, MySQL, Tailwind, and C#.
+            I'm knowledgeable in {' '}
+              <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" className='hover:text-blue-500 underline transition-all duration-300 transform hover:scale-105 inline-block'>  React</a>,{' '}
+              <a href="https://nodejs.org/en" target="_blank" rel="noopener noreferrer" className='hover:text-green-500 underline transition-all duration-300 transform hover:scale-105 inline-block'> Node.js</a>,{' '}
+              <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noopener noreferrer" className='hover:text-gray-500 underline transition-all duration-300 transform hover:scale-105 inline-block'> Spring Boot</a>,{' '}
+              <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer" className='hover:text-blue-500 underline transition-all duration-300 transform hover:scale-105 inline-block'> TypeScript</a>,{' '}
+              <a href="https://www.java.com/en/" target="_blank" rel="noopener noreferrer" className='hover:text-red-500 underline transition-all duration-300 transform hover:scale-105 inline-block'> Java</a>,{' '}
+              <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer" className='hover:text-blue-500 underline transition-all duration-300 transform hover:scale-105 inline-block'> CSS</a>,{' '}
+              <a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer" className='hover:text-orange-500 underline transition-all duration-300 transform hover:scale-105 inline-block'> Git</a>,{' '}
+              <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer" className='hover:text-blue-600 underline transition-all duration-300 transform hover:scale-105 inline-block'> MySQL</a>,{' '}
+              <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" className='hover:text-blue-800 underline transition-all duration-300 transform hover:scale-105 inline-block'> Tailwind</a>,{' '}
+              <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank" rel="noopener noreferrer" className='hover:text-orange-500 underline transition-all duration-300 transform hover:scale-105 inline-block'> HTML</a>,{' '}
+              and a bit of {' '}
+              <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" className='hover:text-yellow-500 underline transition-all duration-300 transform hover:scale-105 inline-block'> Python</a>.{' '}
             <br className='mb-2'/>
-            These days I find myself working on web apps and Unity projects which you can find below :D
+              I'm also knowledgeable in Cloud operations. Specifically I'm familiar with and have experience using {' '}
+              <a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer" className='hover:text-orange-500 underline transition-all duration-300 transform hover:scale-105 inline-block'> AWS</a> And{' '}
+              <a href="https://azure.microsoft.com/en-ca" target="_blank" rel="noopener noreferrer" className='hover:text-blue-400 underline transition-all duration-300 transform hover:scale-105 inline-block'> Azure</a>.
+            <br className='mb-2'/>
+            These days I find myself working on web apps which you can find below :D
           </p>
         </div>
 
@@ -46,10 +62,10 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
             <span>CSS</span>
           </div>
         </a>
-        <a href="https://www.javascript.com/" target="_blank" rel="noopener noreferrer">
+        <a href="https://nodejs.org/en" target="_blank" rel="noopener noreferrer">
         <div data-aos="fade" data-aos-delay="100" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all duration-1200 ease-in-out mx-20">
-            <img src={jsIMG} alt="JavaScript" className="h-16 w-16" />
-            <span>JavaScript</span>
+            <img src={nodeIMG} alt="JavaScript" className="h-16 w-16" />
+            <span>Node.js</span>
           </div>
         </a>
         <a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
@@ -79,6 +95,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
         <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">
           <div data-aos="fade" data-aos-delay="300" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20 min-h-[100px]">
             <img src={mysqlIMG} alt="MySQL" className="h-16 w-16" />
+            <span>MySQL</span>
           </div>
         </a>  
       </div>
