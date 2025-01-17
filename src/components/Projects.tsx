@@ -14,7 +14,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
         <div className="flex flex-col md:flex-row items-center justify-between mb-16">
           <div className="md:w-[43%] mb-4 md:mb-0 text-center">
             <a href="https://tarkov-randomizer.vercel.app/" target="_blank">
-              <h3 className="inline-block text-2xl font-bold hover:text-blue-500 transition-all duration-300 transform hover:scale-110 text-center mb-4">Shiru</h3>
+              <h3 className="inline-block text-2xl font-bold hover:text-blue-500 transition-all duration-300 transform hover:scale-110 text-center mb-4">Tarkov Randomizer</h3>
             </a>
             <p className="text-xl">
               Tarkov Randomizer is a web app that takes all of the gear from the Tarkov Wiki and compiles it into a customizable randomizer so you can get a random loadout to play with in raid.
