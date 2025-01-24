@@ -63,8 +63,13 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
               <p className="text-xl mb-4 mt-4">Shiru is being made using:</p>
             <ul className='list-disc list-inside text-lg ml-4'>
             <li>
-                <a href="https://spring.io/projects/spring-boot" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
-                  Spring Boot
+                <a href="https://aws.amazon.com/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  AWS
+                </a>
+              </li>
+            <li>
+                <a href="https://nodejs.org/en" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  Node.js
                 </a>
               </li>
               <li>
@@ -73,13 +78,13 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
                 </a>
               </li>
               <li>
-                <a href="https://www.java.com/en/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
-                  Java
+                <a href="https://react.dev/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  React
                 </a>
               </li>
               <li>
-                <a href="https://jsoup.org/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
-                  JSoup
+                <a href="https://www.mysql.com/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  MySQL
                 </a>
               </li>
               <li>
