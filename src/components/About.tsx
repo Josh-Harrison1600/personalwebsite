@@ -116,7 +116,7 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
       </a>
      </div>
 
-      <a data-aos="fade-up" className='text-gray-500'>Sensitive details have been removed.<br />Contact me below for my full resume!</a>
+      <a data-aos="fade-up" className='text-gray-500'>Sensitive details have been removed.</a>
     </div>
   );
 });
