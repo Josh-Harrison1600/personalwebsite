@@ -42,7 +42,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
                 </a>
               </li>
             </ul>
-            <a href="https://github.com/Josh-Harrison1600/Tarkov-Randomizer" target="_blank" className="text-xl mt-4 ml-6 underline hover:text-blue-500 transition-all duration-300 transform hover:scale-105">Source Code</a>
+            <a href="https://github.com/Josh-Harrison1600/Tarkov-Randomizer" target="_blank" className="text-xl mt-4 ml-8 underline hover:text-blue-500 transition-all duration-300 transform hover:scale-105">Source Code</a>
           </div>
           <div data-aos="flip-down" className="md:w-[55%] hover:scale-105 duration-300">
             <a href="https://tarkov-randomizer.vercel.app/" target="_blank" className='block'>
@@ -51,27 +51,16 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
           </div>
         </div>
 
-        {/* Song Battle */}
+        {/* Kana Typer */}
         <div className="flex flex-col md:flex-row-reverse items-center justify-between mb-16"> {/* Use flex-row-reverse here */}
           <div className="md:w-[43%] mb-4 md:mb-0 text-center">
-            <a href="https://github.com/Josh-Harrison1600/ShiruBackend" target="_blank">
-              <h3 className="inline-block text-2xl font-bold hover:text-red-500 transition-all duration-300 transform hover:scale-110 text-center mb-4">Shiru</h3>
+            <a href="https://kana-typer-fawn.vercel.app/" target="_blank">
+              <h3 className="inline-block text-2xl font-bold hover:text-red-500 transition-all duration-300 transform hover:scale-110 text-center mb-4">Kana Typer</h3>
             </a>
             <p className="text-xl">
-            Shiru is currently an unfinished app that allows Japanese learners to browse through a collection of books by the Japanese-Language Proficiency Test rankings which range from N5 to N1.
-              This helps the user narrow down a book that is more suited for their current reading level!
-              <p className="text-xl mb-4 mt-4">Shiru is being made using:</p>
+            Kana Typer is a work in progress web app that helps users learn the main two Japanaese phonetic systems, Hiragana & Katakana. The user can select individual symbols, specific categories, or the entire system to study and review! 
+              <p className="text-xl mb-4 mt-4">Kana Typer is being made using:</p>
             <ul className='list-disc list-inside text-lg ml-4'>
-            <li>
-                <a href="https://aws.amazon.com/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
-                  AWS
-                </a>
-              </li>
-            <li>
-                <a href="https://nodejs.org/en" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
-                  Node.js
-                </a>
-              </li>
               <li>
                 <a href="https://www.typescriptlang.org/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
                   TypeScript
@@ -83,27 +72,18 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
                 </a>
               </li>
               <li>
-                <a href="https://www.mysql.com/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
-                  MySQL
-                </a>
-              </li>
-              <li>
-                <a href="https://platform.openai.com/docs/overview" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
-                  OpenAI API
-                </a>
-              </li>
-              <li>
                 <a href="https://tailwindcss.com/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
                   Tailwind
                 </a>
               </li>
             </ul>
+            <a href="https://github.com/Josh-Harrison1600/Kana-Typer" target="_blank" className="text-xl mt-4 ml-8 underline hover:text-red-500 transition-all duration-300 transform hover:scale-105">Source Code</a>
             </p>
           </div>
           <div data-aos="flip-down" className="md:w-[55%] hover:scale-105 duration-300">
-            <a href="https://github.com/Josh-Harrison1600/ShiruBackend" target="_blank" className="block">
+            <a href="https://kana-typer-fawn.vercel.app/" target="_blank" className="block">
               <img
-                src={require('./images/shiruImg.png')}
+                src={require('./images/kanaTyper.png')}
                 alt="Project Two"
                 className="w-full border-2 border-transparent hover:border-red-500 hover:scale-105 transition-all duration-300"
               />
@@ -135,7 +115,7 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
                 </a>
               </li>
             </ul>
-            <a href="https://github.com/Josh-Harrison1600/personalwebsite" target="_blank" className="text-xl mt-4 ml-6 underline hover:text-blue-600 transition-all duration-300 transform hover:scale-105">Source Code</a>
+            <a href="https://github.com/Josh-Harrison1600/personalwebsite" target="_blank" className="text-xl mt-4 ml-8 underline hover:text-blue-600 transition-all duration-300 transform hover:scale-105">Source Code</a>
           </div>
           <div data-aos="flip-down" className="md:w-[55%] hover:scale-105 duration-300">
             <a href="https://github.com/Josh-Harrison1600/personalwebsite" target="_blank" className='block'>

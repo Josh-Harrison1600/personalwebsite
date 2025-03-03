@@ -7,6 +7,7 @@ import tailwindIMG from './images/tailwind.png';
 import typescriptIMG from './images/typescript.png';
 import mysqlIMG from './images/mysql.png';
 import nodeIMG from './images/nodejs.png';
+import javaIMG from './images/javaIcon.png';
 
 interface AboutProps {
   aboutText: string;
@@ -50,16 +51,16 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
 
         {/* Logos on the right */}
         <div data-aos="fade-left" className='grid grid-cols-2 gap-4'>
-        <a href="https://html.spec.whatwg.org/" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.java.com/en/" target="_blank" rel="noopener noreferrer">
           <div data-aos="fade" data-aos-delay="100" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20">
-            <img src={htmlIMG} alt="HTML" className="h-16 w-16" />
-            <span>HTML</span>
+            <img src={javaIMG} alt="Java" className="h-16 w-16" />
+            <span>Java</span>
           </div>
         </a>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
-          <div data-aos="fade" data-aos-delay="300" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20">
-            <img src={cssIMG} alt="CSS" className="h-16 w-16" />
-            <span>CSS</span>
+        <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
+          <div data-aos="fade" data-aos-delay="100" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20">
+            <img src={typescriptIMG} alt="TypeScript" className="h-16 w-16" />
+            <span>TypeScript</span>
           </div>
         </a>
         <a href="https://nodejs.org/en" target="_blank" rel="noopener noreferrer">
@@ -86,10 +87,10 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
             <span>Tailwind</span>
           </div>
         </a>
-        <a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
-          <div data-aos="fade" data-aos-delay="100" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20">
-            <img src={typescriptIMG} alt="TypeScript" className="h-16 w-16" />
-            <span>TypeScript</span>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
+          <div data-aos="fade" data-aos-delay="300" className="flex flex-col items-center border-2 border-red-100 p-1 rounded-md hover:border-gray-300 transition-all mx-20">
+            <img src={cssIMG} alt="CSS" className="h-16 w-16" />
+            <span>CSS</span>
           </div>
         </a>
         <a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">
