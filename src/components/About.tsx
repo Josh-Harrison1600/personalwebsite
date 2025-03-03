@@ -104,7 +104,9 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
       {/* Centered Button at the Bottom */}
       <div data-aos="fade-up" className='mt-8 flex justify-center w-full mb-4'>
       <a
-        href="/resume.pdf?cache-bust=1"
+        href="/Josh Harrison Resume New.pdf?cache-bust=1"
+        target="_blank"
+        rel="noopener noreferrer"
         download="Josh_Harrison_Resume.pdf"
         className='relative text-lg font-semibold px-6 py-2 rounded-lg text-white hover:text-white transition duration-300 ease-in-out group'
       >
