@@ -61,12 +61,17 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
                 </a>
               </li>
             </ul>
-            <a href="https://github.com/Josh-Harrison1600/Tarkov-Randomizer" target="_blank" className="text-xl mt-4 ml-8 underline hover:text-blue-500 transition-all duration-300 transform hover:scale-105">Source Code</a>
+            
+            <a href="https://github.com/Josh-Harrison1600/TarkovRandomizer" target="_blank" className="block text-xl mt-4 ml-8 underline hover:text-blue-500 transition-all duration-300 transform hover:scale-105">Front-end Source Code</a>
+            
+            <a href="https://github.com/Josh-Harrison1600/TarkovScraper" target="_blank" className="block text-xl mt-4 ml-8 underline hover:text-blue-500 transition-all duration-300 transform hover:scale-105">Back-end Source Code</a>
+
           </div>
           <div data-aos="flip-down" className="md:w-[55%] hover:scale-105 duration-300">
             <a href="https://tarkov-randomizer.vercel.app/" target="_blank" className='block'>
               <img src={require('./images/tarkovRandomizer.png')} className="w-full border-2 border-transparent hover:border-blue-500 hover:scale-105 transition-all duration-300" />
             </a>
+            
           </div>
         </div>
 
