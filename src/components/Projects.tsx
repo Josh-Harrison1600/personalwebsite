@@ -17,9 +17,13 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
               <h3 className="inline-block text-2xl font-bold hover:text-blue-500 transition-all duration-300 transform hover:scale-110 text-center mb-4">Tarkov Randomizer</h3>
             </a>
             <p className="text-xl">
-              Tarkov Randomizer is a web app that takes all of the gear from the Tarkov Wiki and compiles it into a customizable randomizer so you can get a random loadout to play with in raid.
+              Tarkov Randomizer is a work in progress web app that scrapes all of the gear from the Tarkov Wiki using <a href="https://www.npmjs.com/package/cheerio" target="_blank" className='inline-block hover:text-blue-500 underline transition-all duration-300 transform hover:scale-105'>Cheerio </a>, stores it in an AWS MySQL database and then uses a REST API to send it to the frontend into a customizable randomizer so you can get a random loadout to play with in raid.
+              The scraper it set to run automatically once a month using <a href="https://github.com/features/actions" target="_blank" className='inline-block hover:text-blue-500 underline transition-all duration-300 transform hover:scale-105'>GitHub Actions</a> to account for any content updates in the game!
             </p>
-            <p className="text-xl mb-4 mt-4">Tarkov Randomizer was made using:</p>
+            <p className="text-xl mt-2">
+              <span className='font-bold text-red-500'>Note:</span> I am currently reworking this project for a nicer frontend, <span className='font-bold text-red-500'>this is not final!</span>
+            </p>
+            <p className="text-xl mb-4 mt-4">Tarkov Randomizer is being made using:</p>
             <ul className='list-disc list-inside text-lg ml-4'>
               <li>
                 <a href="https://react.dev/" target="_blank" className='inline-block hover:text-blue-500 transition-all duration-300 transform hover:scale-105 mb-2'>
@@ -29,6 +33,21 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
               <li>
                 <a href="https://nodejs.org/en" target="_blank" className='inline-block hover:text-blue-500 transition-all duration-300 transform hover:scale-105 mb-2'>
                   Node.js
+                </a>
+              </li>
+              <li>
+                <a href="https://aws.amazon.com/lambda/" target="_blank" className='inline-block hover:text-blue-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  AWS Lambda
+                </a>
+              </li>
+              <li>
+                <a href="https://aws.amazon.com/rds/" target="_blank" className='inline-block hover:text-blue-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  AWS RDS
+                </a>
+              </li>
+              <li>
+                <a href="https://www.mysql.com/" target="_blank" className='inline-block hover:text-blue-500 transition-all duration-300 transform hover:scale-105 mb-2'>
+                  MySQL
                 </a>
               </li>
               <li>
@@ -58,8 +77,8 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
               <h3 className="inline-block text-2xl font-bold hover:text-red-500 transition-all duration-300 transform hover:scale-110 text-center mb-4">Kana Typer</h3>
             </a>
             <p className="text-xl">
-            Kana Typer is a work in progress web app that helps users learn the main two Japanaese phonetic systems, Hiragana & Katakana. The user can select individual symbols, specific categories, or the entire system to study and review! 
-              <p className="text-xl mb-4 mt-4">Kana Typer is being made using:</p>
+            Kana Typer is a web app that helps users learn the main two Japanaese phonetic systems, Hiragana & Katakana. The user can select individual symbols, specific categories, or the entire system to study and review! 
+              <p className="text-xl mb-4 mt-4">Kana Typer was made using:</p>
             <ul className='list-disc list-inside text-lg ml-4'>
               <li>
                 <a href="https://www.typescriptlang.org/" target="_blank" className='inline-block hover:text-red-500 transition-all duration-300 transform hover:scale-105 mb-2'>
