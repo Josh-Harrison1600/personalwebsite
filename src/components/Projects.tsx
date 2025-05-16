@@ -84,7 +84,8 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
               <h3 className="inline-block text-2xl font-bold hover:text-red-500 transition-all duration-300 transform hover:scale-110 text-center mb-4">Kana Typer</h3>
             </a>
             <p className="text-xl">
-            Kana Typer is a web app that helps users learn the main two Japanaese phonetic systems, Hiragana & Katakana. The user can select individual symbols, specific categories, or the entire system to study and review! 
+              Kana Typer is a web app that helps users learn the main two Japanaese phonetic systems, Hiragana & Katakana. The user can select individual symbols, specific categories, or the entire system to study and review!
+            </p> 
               <p className="text-xl mb-4 mt-4">Kana Typer was made using:</p>
             <ul className='list-disc list-inside text-lg ml-4'>
             <li>
@@ -104,7 +105,6 @@ const Projects = forwardRef<HTMLDivElement, ProjectsProps>(({ projectsText }, re
               </li>
             </ul>
             <a href="https://github.com/Josh-Harrison1600/Kana-Typer" target="_blank" className="text-xl mt-4 ml-8 underline hover:text-red-500 transition-all duration-300 transform hover:scale-105">Source Code</a>
-            </p>
           </div>
           <div data-aos="flip-down" className="md:w-[55%] hover:scale-105 duration-300">
             <a href="https://kana-typer-fawn.vercel.app/" target="_blank" className="block">

@@ -10,34 +10,42 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
   const [showModal, setShowModal] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
 
-  const sendEmail = (e: React.FormEvent) => {
+  //function for getting the env variables from the backend and sending the email
+  const sendEmail = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSending(true);
 
     if (formRef.current) {
-      emailjs
-        .sendForm(
-          process.env.REACT_APP_EMAILJS_SERVICE_ID || '',
-          process.env.REACT_APP_EMAILJS_TEMPLATE_ID || '',
-          formRef.current,
-          process.env.REACT_APP_EMAILJS_USER_ID || ''
-        )
-        .then(
-          () => {
-            setMessage('Message sent successfully!');
-            setShowModal(true);
-            setIsSending(false);
-            formRef.current?.reset();
-          },
-          (error) => {
-            console.log(error.text);
-            setMessage('Failed to send message. Please try again.');
-            setShowModal(true);
-            setIsSending(false);
-          }
-        );
+      const formData = new FormData(formRef.current);
+      const data = Object.fromEntries(formData.entries());
+
+      try {
+        const res = await fetch('http://localhost:3001/api/send-email', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        const json = await res.json();
+        if (json.success) {
+          setMessage('Message sent successfully!');
+          setShowModal(true);
+          setIsSending(false);
+          formRef.current.reset();
+        } else {
+          setMessage('Failed to send message. Please try again.');
+          setShowModal(true);
+          setIsSending(false);
+        }
+      } catch (err) {
+        console.error(err);
+        setMessage('An error occurred. Please try again.');
+        setShowModal(true);
+        setIsSending(false);
+      }
     }
   };
+
 
   // Trigger the fade-out animation, then hide the modal after the animation is done
   const closeModal = () => {
@@ -57,6 +65,8 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
         </p>
 
         <div className="max-w-lg mx-auto">
+
+          {/* Form */}
           <form ref={formRef} onSubmit={sendEmail} className="space-y-6">
             <div>
               <label
@@ -110,6 +120,8 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
             </div>
 
             <div>
+
+              {/* Submit Button */}
               <button
                 type="submit"
                 disabled={isSending}

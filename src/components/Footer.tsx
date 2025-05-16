@@ -7,6 +7,8 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col items-center space-y-4 md:flex-row md:justify-between md:space-y-0 px-4">
         <span className="text-sm">&copy; {new Date().getFullYear()} Josh Harrison</span>
         <div className="flex space-x-6">
+
+          {/* Github Icon */}
           <a
             href="https://github.com/Josh-Harrison1600"
             target="_blank"
@@ -15,6 +17,8 @@ const Footer = () => {
           >
             <FaGithub size={28} />
           </a>
+
+          {/* Linkedin Icon */}
           <a
             href="https://www.linkedin.com/in/josh-harrison2283/"
             target="_blank"
@@ -29,4 +33,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; // Export the Footer component as default
+export default Footer;

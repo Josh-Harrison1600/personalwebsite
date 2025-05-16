@@ -31,7 +31,7 @@ function App() {
   const delayAfterTyping = 2000;
 
   // Array of texts to display in typing effect
-  const texts = ["Computer Science Student.", "Java Developer.", "React Developer.", "IT Technician.", "Network Administration Graduate.", "Cybersecurity Graduate."];
+  const texts = ["React Developer.", "Full-Stack Developer.", "Node.js Developer.", "Computer Science Student."];
 
   // Use AOS library
   useEffect(() => {

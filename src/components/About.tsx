@@ -23,9 +23,9 @@ const About = forwardRef<HTMLDivElement, AboutProps>(({ aboutText }, ref) => {
         {/* About Text on the left */}
         <div data-aos="fade-right" className='flex flex-col justify-center'>
           <p className='text-xl leading-relaxed tracking-wide'>
-            I'm a previous graduate of NBCC from both Network Administration and Cybersecurity.
+            I'm a previous graduate of NBCC from both Network Administration and Cybersecurity. Now I'm working on my Bachelors degree in Computer Science with WGU!
             <br className='mb-2'/>
-            I currently work in both Cybersecurity & IT Support whilst pursuing my Bachelors of Computer Science in my spare time.
+            I currently work as a Full-Stack developer with a React/Node.js focus whilst pursuing my Bachelors of Computer Science in my spare time.
             <br className='mb-2'/>
             I'm knowledgeable in {' '}
               <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" className='hover:text-blue-500 underline transition-all duration-300 transform hover:scale-105 inline-block'>  React</a>,{' '}
