@@ -8,6 +8,7 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
   const [message, setMessage] = useState('');
   const [showModal, setShowModal] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
+  const [wasSuccessful, setWasSuccessful] = useState(false);
 
   //function for getting the env variables from the backend and sending the email
   const sendEmail = async (e: React.FormEvent) => {
@@ -30,17 +31,20 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
           setMessage('Message sent successfully!');
           setShowModal(true);
           setIsSending(false);
+          setWasSuccessful(true);
           formRef.current.reset();
         } else {
           setMessage('Failed to send message. Please try again.');
           setShowModal(true);
           setIsSending(false);
+          setWasSuccessful(false);
         }
       } catch (err) {
         console.error(err);
         setMessage('An error occurred. Please try again.');
         setShowModal(true);
         setIsSending(false);
+        setWasSuccessful(false);
       }
     }
   };
@@ -156,9 +160,11 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
               ✕
             </button>
             <h3 className="text-lg font-semibold mb-4 text-center">{message}</h3>
-            <p className="text-md text-black text-center">
-              I'll get back to you shortly!
-            </p>
+            {wasSuccessful && (
+              <p className="text-md text-black text-center">
+                I'll get back to you shortly!
+              </p>
+            )}
           </div>
         </div>
       )}
