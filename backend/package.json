@@ -2,10 +2,10 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-"scripts": {
-  "build": "tsc",
-  "start": "node dist/server.js"
-},
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "@types/cors": "^2.8.18",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.18",
     "@types/nodemailer": "^6.4.17"
   }
 }
