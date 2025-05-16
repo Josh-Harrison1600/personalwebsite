@@ -1,5 +1,4 @@
 import React, { useState, useRef, forwardRef } from 'react';
-import emailjs from 'emailjs-com';
 
 interface ContactProps {}
 
@@ -20,7 +19,7 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
       const data = Object.fromEntries(formData.entries());
 
       try {
-        const res = await fetch('http://localhost:3001/api/send-email', {
+        const res = await fetch('https://personalwebsite-oooe.onrender.com', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
