@@ -19,7 +19,7 @@ const Contact = forwardRef<HTMLDivElement, ContactProps>((props, ref) => {
       const data = Object.fromEntries(formData.entries());
 
       try {
-        const res = await fetch('https://personalwebsite-oooe.onrender.com', {
+        const res = await fetch('https://personalwebsite-oooe.onrender.com/api/send-email', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(data),
