@@ -4,11 +4,11 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { useTypingEffect } from './hooks/useTypingEffect';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
-import Contact from './components/Contact'; 
-import Navbar from './components/Navbar';
-import About from './components/About';
-import Projects from './components/Projects';
-import Footer from './components/Footer';
+import Contact from './sections/Contact'; 
+import Navbar from './sections/Navbar';
+import About from './sections/About';
+import Projects from './sections/Projects';
+import Footer from './sections/Footer';
 
 function App() {
   const [mousePos, setMousePos] = useState({ x: -175, y: -175 });

@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="bg-black text-white py-6">
       <div className="container mx-auto flex flex-col items-center space-y-4 md:flex-row md:justify-between md:space-y-0 px-4">
-        <span className="text-sm">&copy; {new Date().getFullYear()} Josh Harrison</span>
+        <span className="text-sm">{new Date().getFullYear()} Josh Harrison</span>
         <div className="flex space-x-6">
 
           {/* Github Icon */}
